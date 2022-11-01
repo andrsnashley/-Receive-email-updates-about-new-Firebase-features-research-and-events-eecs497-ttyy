@@ -1,10 +1,33 @@
 <script setup>
-// import HelloWorld from './components/HelloWorld.vue'           
+// import HelloWorld from './components/HelloWorld.vue'      
+import Login from './components/Login.vue'
+const routes = [
+    {
+        name: "Login",
+        component: Login,
+        path: "/login",
+    },
+    {
+
+    }
+]
 </script>
 
 <template>
 
   <main>
+  	<div class="bar">
+			<div class="left">
+				<a href="/">
+					<img src="/static/images/logo.jpg" alt="" style="width:55px;height:55px;">
+					</a>
+			</div>
+			<div class="right">
+				<router-link to="/Login/">Login</router-link>
+				<h4 class="divider">|</h4>
+				<a href="/explore/">Sign Up</a>
+			</div>
+		</div>
     <div id="landing_page_1">
       <div id="landing_page_1_text">
         <h2>Find your next</h2>
@@ -13,6 +36,7 @@
 
       
     </div>
+    
   </main>
   
 
