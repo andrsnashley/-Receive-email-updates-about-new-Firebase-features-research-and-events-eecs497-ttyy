@@ -1,27 +1,6 @@
 <template>
 
-  <main>
-  	<div class="bar">
-			<div class="left">
-				<a href="/">
-					</a>
-			</div>
-			<div class="right">
-				<button v-on:click = "login()">Login</button>
-				<h4 class="divider">|</h4>
-				<a href="/explore/">Sign Up</a>
-			</div>
-		</div>
-    <div id="landing_page_1">
-      <div id="landing_page_1_text">
-        <h2>Find your next</h2>
-        <h2 id="changeText">favorite meal.</h2>
-      </div>
-
-      
-    </div>
-    
-  </main>
+  <router-view/>
   
 
 </template>
@@ -58,8 +37,12 @@ export default {
     function login(){
         router.push("/login");
     }
+    function createAccount(){
+        router.push("/create");
+    }
+
     
-    return { login, }
+    return { login, createAccount,}
   },
 }
 </script>

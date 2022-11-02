@@ -1,17 +1,7 @@
 <template>
-
+  <header/>
     <main>
-        <div class="bar">
-              <div class="left">
-                  <a href="/">
-                      </a>
-              </div>
-              <div class="right">
-                  <button v-on:click = "login()">Login</button>
-                  <h4 class="divider">|</h4>
-                  <a href="/explore/">Sign Up</a>
-              </div>
-          </div>
+      
       <div id="landing_page_1">
         <div id="landing_page_1_text">
           <h2>Find your next</h2>
@@ -53,7 +43,9 @@
   
   <script>
   import router from "@/router";
+  import header from "./Header.vue";
   export default {
+    components: header, 
     setup(){
       function login(){
           router.push("/login");

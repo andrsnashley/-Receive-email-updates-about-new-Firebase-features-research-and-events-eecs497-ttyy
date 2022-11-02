@@ -1,7 +1,4 @@
 <template>
-  <div id="app">
-    <div id="alert" v-if="alert">{{ alert }}</div>
-
     <div class="bar">
         <div class="left">
             <h1> TTYY </h1>
@@ -11,37 +8,8 @@
             <button v-on:click = "createAccount()">Sign Up</button>
         </div>
     </div>
-    <h2>Login </h2>
-    <form @submit.prevent="loginWithPassword">
-      <label>
-        username
-        <input type="text" v-model="emailOrUsername" />
-      </label>
-      <label>
-        Password
-        <input type="password" v-model="password" />
-      </label>
-      <button type="submit">Log in</button>
-    </form>
-  </div>
-
 </template>
-
 <style scoped>
-  button,
-  input {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  body{
-    background-color: #F5CAC3;
-  }
-
-  #alert {
-    color: red;
-    margin-bottom: 10px;
-  }
     .bar {
         margin-top: 45px;
         margin-bottom: 40px;
