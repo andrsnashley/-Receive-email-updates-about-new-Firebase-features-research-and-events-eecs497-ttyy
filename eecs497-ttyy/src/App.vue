@@ -23,7 +23,7 @@ const routes = [
 					</a>
 			</div>
 			<div class="right">
-				<router-link to="/Login/">Login</router-link>
+				<router-link to="/login">Login</router-link>
 				<h4 class="divider">|</h4>
 				<a href="/explore/">Sign Up</a>
 			</div>
