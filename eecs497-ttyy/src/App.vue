@@ -10,7 +10,12 @@ const routes = [
     {
 
     }
-]
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
 </script>
 
 <template>
@@ -19,7 +24,6 @@ const routes = [
   	<div class="bar">
 			<div class="left">
 				<a href="/">
-					<img src="/static/images/logo.jpg" alt="" style="width:55px;height:55px;">
 					</a>
 			</div>
 			<div class="right">
