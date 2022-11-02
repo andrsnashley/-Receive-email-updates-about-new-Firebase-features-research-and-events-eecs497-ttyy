@@ -1,23 +1,3 @@
-<script setup>
-// import HelloWorld from './components/HelloWorld.vue'      
-import Login from './components/Login.vue'
-const routes = [
-    {
-        name: "Login",
-        component: Login,
-        path: "/login",
-    },
-    {
-
-    }
-];
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-});
-</script>
-
 <template>
 
   <main>
@@ -27,7 +7,7 @@ const router = createRouter({
 					</a>
 			</div>
 			<div class="right">
-				<router-link to="/login">Login</router-link>
+				<button v-on:click = "login()">Login</button>
 				<h4 class="divider">|</h4>
 				<a href="/explore/">Sign Up</a>
 			</div>
@@ -70,3 +50,16 @@ main {
 }
 
 </style>
+
+<script>
+import router from "@/router";
+export default {
+  setup(){
+    function login(){
+        router.push("/login");
+    }
+    
+    return { login, }
+  },
+}
+</script>
