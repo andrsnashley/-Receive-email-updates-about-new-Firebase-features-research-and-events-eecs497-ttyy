@@ -1,15 +1,13 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getFirestore, collection, doc, setDoc, getDoc, getDocs, query, where } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBt4Flz-82HOr2lsXpRyNma5AuWQ-n4Ayw",
-  authDomain: "eecs497-ttyy.firebaseapp.com",
-  projectId: "eecs497-ttyy",
-  storageBucket: "eecs497-ttyy.appspot.com",
-  messagingSenderId: "895527995614",
-  appId: "1:895527995614:web:4508632d4166985ae95a4f",
-  measurementId: "G-DJYWR5HMKH"
+  apiKey: "AIzaSyB2lDbe9Ecx3XcS_wDYo9CosjVAxs0ImD0",
+  authDomain: "ttyy-d8da1.firebaseapp.com",
+  projectId: "ttyy-d8da1",
+  storageBucket: "ttyy-d8da1.appspot.com",
+  messagingSenderId: "730402585512",
+  appId: "1:730402585512:web:8ed3b1f15c1b0dc29e7b9d"
 };
 
 const app = initializeApp(firebaseConfig);
