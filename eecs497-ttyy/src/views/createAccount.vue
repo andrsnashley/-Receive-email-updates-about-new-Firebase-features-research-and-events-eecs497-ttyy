@@ -56,15 +56,12 @@
     },
     methods: {
       onSubmit: async function () {
-
         var user = {
           "username": this.username,
           "password": this.password
         };
-
         console.log(user);
         await createUser({ user })
-
       }
     }
   }
