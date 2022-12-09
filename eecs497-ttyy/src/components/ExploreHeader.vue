@@ -11,6 +11,12 @@
             <img src="../assets/searchbar.png" alt="" width="20px">
             <input id="search" type="text">
           </div>
+
+          <div class="searchButton">
+            <button v-on:click = "detailSearch()">
+              Detail Search
+            </button>
+          </div>
           
 
           <div class="right">
@@ -137,6 +143,15 @@
         }
         
         return { explore,}
+      },
+
+      setup() {
+  
+        function detailSearch(){
+            router.push("/search");
+        }
+        
+        return { detailSearch,}
       },
    
     }

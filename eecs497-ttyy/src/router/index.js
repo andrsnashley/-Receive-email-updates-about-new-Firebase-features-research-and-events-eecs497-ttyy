@@ -5,6 +5,8 @@ import createAccount from '@/views/createAccount.vue'
 import Profile from '@/views/Profile.vue'
 import Explore from '@/views/Explore.vue'
 import Recipe from '@/views/Recipe.vue'
+import Search from '@/views/Search.vue'
+import Results from '@/views/Results.vue'
 
 const routes = [
   {
@@ -36,6 +38,18 @@ const routes = [
     path:'/recipe/:id',
     name: "Recipe",
     component: Recipe,
+    // props: true
+  },
+  {
+    path:'/search',
+    name: "Search",
+    component: Search,
+    // props: true
+  },
+  {
+    path:'/results',
+    name: "Results",
+    component: Results,
     // props: true
   }
 

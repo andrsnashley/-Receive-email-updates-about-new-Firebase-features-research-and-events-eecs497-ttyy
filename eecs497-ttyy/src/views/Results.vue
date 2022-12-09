@@ -1,7 +1,6 @@
 <template>
 
-  <Header />
-  <logged-in-header/>
+  <h2>Search Results</h2>
   <div v-if="!loading">Loading</div>
 
   <div v-else>
@@ -87,13 +86,12 @@
 </style>
 
 <script>
-  import LoggedInHeader from '@/components/LoggedInHeader.vue'
   import axios from 'axios'
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
   // import ref from 'vue'
   export default {
     components: {
-      LoggedInHeader
+
     },
     data() {
       return {
@@ -103,7 +101,7 @@
     },
     created() {
       this.fetchData()
-    }
+    },
     methods: {
       fetchData: function() {
          

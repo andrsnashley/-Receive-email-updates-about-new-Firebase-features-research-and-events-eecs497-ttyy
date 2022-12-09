@@ -1,5 +1,5 @@
 <template>
-  <LoginHeader />
+  <ExploreHeader />
   <div style="display: inline;">
     <img style="display: inline;" class="image__img" v-bind:src="recipe.image">
     <div style="display: inline;">
@@ -43,12 +43,12 @@
 </style>
 
 <script>
-import LoginHeader from '@/components/LoginHeader.vue'
+import ExploreHeader from '@/components/ExploreHeader.vue'
 import axios from 'axios'
 
 export default {
     components:{
-      LoginHeader
+      ExploreHeader
     },
     data() {
       return {
