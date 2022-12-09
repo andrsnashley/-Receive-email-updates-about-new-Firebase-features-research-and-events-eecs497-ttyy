@@ -1,26 +1,29 @@
 
 <template>
-  
+  <logged-in-header/>
   <div v-if="!loading">Loading</div>
 
   <div v-else>
     <div class = "grid-container">
 
       <div v-for = "recipe in recipes">
-        <div class="image">
-          <img class="image__img" v-bind:src="recipe.image">
-          <div class="image__overlay">
-            <div class="image__title">{{recipe.label}}</div>
-            <div class="image__cal">
-              <font-awesome-icon style="display: inline; padding-right: 5px;" icon="fa-solid fa-fire" size="2x" />
-              <p style="display: inline;">{{recipe.calories}} cal.</p>
+        <router-link :to="`/recipe/${recipe.uri}`">
+          <div class="image" >
+            <img class="image__img" v-bind:src="recipe.image">
+            <div class="image__overlay">
+              <div class="image__title">{{recipe.label}}</div>
+              <br>
+              <div class="image__cal">
+                <font-awesome-icon style="display: inline; padding-right: 5px;" icon="fa-solid fa-fire" size="2x" />
+                <p style="display: inline;">{{recipe.calories}} cal.</p>
+              </div>
+              <div class="image__ingr">
+                <font-awesome-icon style="display: inline; padding-right: 5px;" icon="fa-solid fa-cart-shopping" size="2x"/>
+                <p style="display: inline;">{{recipe.ingredientLines.length}} ingr.</p>
             </div>
-            <div class="image__ingr">
-              <font-awesome-icon style="display: inline; padding-right: 5px;" icon="fa-solid fa-cart-shopping" size="2x"/>
-              <p style="display: inline;">{{recipe.ingredientLines.length}} ingr.</p>
+            </div>
           </div>
-          </div>
-        </div>
+        </router-link>
       </div>
         
     </div>
@@ -113,16 +116,18 @@
 
             for (let i = 0; i < this.recipes.length; i++) {
               this.recipes[i] = this.recipes[i]['recipe'];
-              this.recipes[i]["id"] = i;
+              console.log(this.recipes[i]['recipe']);
             }
           })
           .catch(error => {
             console.log(error);
           })
-          .finally(() => this.loading = true)
-
-        
+          .finally(() => this.loading = true)   
       }
+
+
+
+
     
     },
   }

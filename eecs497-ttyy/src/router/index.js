@@ -3,6 +3,7 @@ import Landing from '@/views/Landing.vue'
 import Login from '@/views/Login.vue'
 import createAccount from '@/views/createAccount.vue'
 import Explore from '@/views/Explore.vue'
+import Recipe from '@/views/Recipe.vue'
 
 const routes = [
   {
@@ -24,6 +25,12 @@ const routes = [
     path:'/explore',
     name: 'Explore',
     component: Explore
+  }, 
+  {
+    path:'/recipe',
+    name: "Recipe",
+    component: Recipe,
+    // props: true
   }
 
 
