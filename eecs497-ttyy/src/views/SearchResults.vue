@@ -1,7 +1,7 @@
 <template>
 
-  <ExploreHeader />
-
+  <Header />
+  <logged-in-header/>
   <div v-if="!loading">Loading</div>
 
   <div v-else>
@@ -87,13 +87,13 @@
 </style>
 
 <script>
-  import ExploreHeader from '@/components/ExploreHeader.vue'
+  import LoggedInHeader from '@/components/LoggedInHeader.vue'
   import axios from 'axios'
   import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
   // import ref from 'vue'
   export default {
     components: {
-      ExploreHeader
+      LoggedInHeader
     },
     data() {
       return {
@@ -103,9 +103,10 @@
     },
     created() {
       this.fetchData()
-    },
+    }
     methods: {
       fetchData: function() {
+         
         var url = "https://api.edamam.com/api/recipes/v2?type=public&app_id=7cf5b75d&app_key=07afc6fea9813514801d3191aea1f100&mealType=Lunch&random=true";
 
         fetch(url)

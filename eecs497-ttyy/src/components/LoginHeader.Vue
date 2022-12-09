@@ -6,8 +6,8 @@
               <h1> TTYY </h1>
           </div>
           <div class="right">
-            <button class="button-23" style = "margin-right: 40px;" v-on:click = "login()">Login</button>
-            <button class="button-23" v-on:click = "createAccount()">Sign Up</button>
+            <button class="button-23" style = "margin-right: 40px;" v-on:click = "explore()">Explore</button>
+            <button class="button-23" v-on:click = "profile()">Profile</button>
           </div>
       </div>
         
@@ -93,19 +93,11 @@
     export default {
       setup() {
   
-        function login(){
-            router.push("/login");
-        }
-  
-        function createAccount(){
-            router.push("/create");
-        }
-
-        function profile(){
-            router.push("/profile");
+        function explore(){
+            router.push("/explore");
         }
         
-        return { login, createAccount}
+        return { explore,}
       },
    
     }

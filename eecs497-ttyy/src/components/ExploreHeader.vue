@@ -2,13 +2,23 @@
     <main>
   
       <div class="bar">
+
           <div class="left">
               <h1> TTYY </h1>
           </div>
-          <div class="right">
-            <button class="button-23" style = "margin-right: 40px;" v-on:click = "login()">Login</button>
-            <button class="button-23" v-on:click = "createAccount()">Sign Up</button>
+          
+          <div class="center">
+            <img src="../assets/searchbar.png" alt="" width="20px">
+            <input id="search" type="text">
           </div>
+          
+
+          <div class="right">
+            <button v-on:click = "profile()">
+              <img src="../assets/avatar.jpeg" alt="Avatar" class="avatar">
+            </button>
+          </div>
+
       </div>
         
     </main>
@@ -19,6 +29,21 @@
     main {
       font-size: 40px;
       text-align: center;
+    }
+
+    .topnav input[type=text] {
+      float: right;
+      padding: 6px;
+      border: none;
+      margin-top: 8px;
+      margin-right: 16px;
+      font-size: 17px;
+    }
+    .avatar {
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
     }
   
     .bar {
@@ -34,6 +59,20 @@
         left: 50px;
         padding-top: 18px;
         padding-bottom: 25px;
+    }
+
+    .center {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      height: 10px;
+      width: 600px;
+      padding-top: 18px;
+      padding-bottom: 25px;
+    }
+
+    #search {
+      border-radius: 30px;
     }
   
     .bar .right {
@@ -93,19 +132,11 @@
     export default {
       setup() {
   
-        function login(){
-            router.push("/login");
-        }
-  
-        function createAccount(){
-            router.push("/create");
-        }
-
-        function profile(){
-            router.push("/profile");
+        function explore(){
+            router.push("/explore");
         }
         
-        return { login, createAccount}
+        return { explore,}
       },
    
     }

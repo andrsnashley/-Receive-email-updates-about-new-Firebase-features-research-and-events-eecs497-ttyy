@@ -2,41 +2,70 @@
     <main>
     
     <Header />
+    <div id="create_background">
 
-    <h2>Sign Up </h2>
-    <form @submit.prevent="onSubmit">
-      <div class="form-group">
-        <label>Username</label>
-        <input v-model="username" class="form-control" required />
-      </div>
-
-      <div class="form-group mt-3">
-        <label>Password</label>
-        <input v-model="password" class="form-control" required />
-      </div>
-  
-      <h3>What are your dietary restricttions? </h3>
-  
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-      <label for="vehicle1"> vegetarian</label><br>
-      <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-      <label for="vehicle2"> vegan</label><br>
-      <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-      <label for="vehicle3"> peanut-free</label><br><br>
-       
-      <button type="submit" class="btn btn-success mt-3">
-        Create User
-      </button>
-    </form>
-
+    <div id="create">
+      <br>
+      <h2>Sign Up </h2>
+      <br>
+      <form @submit.prevent="createWithPassword">
+        <div>
+        <label>
+          Email
+          <input type="text" v-model="email" />
+        </label>
+        </div>
+        <br>
+        <div>
+        <label>
+          Username
+          <input type="text" v-model="username" />
+        </label>
+        </div>
+        <br>
+        <div>
+        <label>
+          Password
+          <input type="password" v-model="password" />
+        </label>
+        </div>
+        <br>
+        <div>
+        <label>
+          Re-Type Password
+          <input type="password" v-model="passwordAgain" />
+        </label>
+        </div>
+        <br>
+        <button type="submit" v-on:click="login()">Sign Up</button>
+      </form>
+    </div>
+    </div>
     </main>
   
 </template>
 
 <style scoped>
-  .grid-container {
-    display: grid;
-  }
+
+#create_background {
+  padding-top: 200px;
+  width: 100%;
+  height: 600px;
+  display: block;
+  background-image: url("../assets/landing_page_background.png");
+}
+
+#create{
+  margin: auto;
+  text-align: center;
+  background-color: moccasin;
+  width: 20%;
+  height: 300px;
+  position: relative;
+  top: -70px;
+  border-radius: 20px;
+}
+
 </style>
 
 <script>
@@ -51,11 +80,15 @@
       return {
         username: "",
         password: "",
+        retype: "",
   
       }
     },
     methods: {
       onSubmit: async function () {
+        if(this.password != this.retype){
+          alert("Passwords don't match!");
+        }
         var user = {
           "username": this.username,
           "password": this.password

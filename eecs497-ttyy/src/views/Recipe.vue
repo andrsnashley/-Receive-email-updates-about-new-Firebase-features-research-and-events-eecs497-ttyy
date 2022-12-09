@@ -1,5 +1,5 @@
 <template>
-  <logged-in-header/>
+  <LoginHeader />
   <div style="display: inline;">
     <img style="display: inline;" class="image__img" v-bind:src="recipe.image">
     <div style="display: inline;">
@@ -23,7 +23,7 @@
     </ul>
   </div>
 
-  <h3 >{{recipe.calories}} servings</h3>
+  <h3 >{{recipe.calories}} calories</h3>
     
 </template>
 
@@ -43,12 +43,12 @@
 </style>
 
 <script>
-import LoggedInHeader from '@/components/LoggedInHeader.vue'
+import LoginHeader from '@/components/LoginHeader.vue'
 import axios from 'axios'
 
 export default {
     components:{
-        LoggedInHeader
+      LoginHeader
     },
     data() {
       return {
@@ -65,7 +65,9 @@ export default {
     methods:{
         fetchData: function() {
             // var url = `/api/recipes/v2/${this.id}`
-            var url = "https://api.edamam.com/api/recipes/v2/_232e9cb43477ccaaffb63e8603d10fb2?type=public&app_id=7cf5b75d&app_key=07afc6fea9813514801d3191aea1f100&field=label&field=image&field=dietLabels&field=healthLabels&field=ingredientLines&field=ingredients&field=calories&field=co2EmissionsClass&field=tags"
+            var url = `https://api.edamam.com/api/recipes/v2/${this.id}?type=public&app_id=7cf5b75d&app_key=07afc6fea9813514801d3191aea1f100&field=uri&field=label&field=image&field=images&field=source&field=url&field=shareAs&field=yield&field=dietLabels&field=healthLabels&field=cautions&field=ingredientLines&field=ingredients&field=calories&field=glycemicIndex&field=totalCO2Emissions&field=co2EmissionsClass&field=totalWeight&field=totalTime&field=cuisineType&field=mealType&field=dishType&field=totalNutrients&field=totalDaily&field=digest&field=tags`
+            console.log(url)
+            // var url = "https://api.edamam.com/api/recipes/v2/_232e9cb43477ccaaffb63e8603d10fb2?type=public&app_id=7cf5b75d&app_key=07afc6fea9813514801d3191aea1f100&field=label&field=image&field=dietLabels&field=healthLabels&field=ingredientLines&field=ingredients&field=calories&field=co2EmissionsClass&field=tags"
             fetch(url)
             .then(response => response.json())
             .then(data => {
